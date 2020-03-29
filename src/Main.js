@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// Explanation for layout, indivudel stack controllers will and can be used
+// Explanation for layout, individuel stack controllers will and can be used
 // https://reactnavigation.org/docs/screen-options-resolution#setting-parent-screen-options-based-on-child-navigators-state
 
 // Assets
