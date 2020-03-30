@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet, Button } from "react-native";
 
-function HomeScene({ navigation }) {
+function HomeView({ navigation }) {
     return (
         <View style={styles.container}>
-            <Text>I"m HomeScene</Text>
+            <Text>I"m HomeView</Text>
             <Button
                 title="Go to Details"
                 onPress={() => navigation.navigate("Detail", {
@@ -17,7 +17,7 @@ function HomeScene({ navigation }) {
     );
 }
 
-export default HomeScene;
+export default HomeView;
 
 const styles = StyleSheet.create({
     container: {
