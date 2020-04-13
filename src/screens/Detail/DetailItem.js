@@ -7,7 +7,7 @@ function DetailItem(props) {
     const { title, description, url } = props.item;
 
     function eventHandler() {
-        // fetch(url);
+        fetch(url);
     }
 
     return (

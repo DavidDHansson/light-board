@@ -5,7 +5,7 @@ import Top from "./../Home/HomeElementBig";
 import Item from "./DetailItem";
 
 function Detail({ route, navigation }) {
-    const { id, description, title, content } = route.params.props;
+    const { content } = route.params.props;
 
     return (
         <View style={{ backgroundColor: "#fff" }}>
