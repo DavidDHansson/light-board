@@ -1,14 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
-function Detail({ route, navigation}) {
-    const { id } = route.params;
-    const { description } = route.params;
+import Top from "./../Home/HomeElementBig";
+
+function Detail({ route, navigation }) {
+    const { id, description, title, content } = route.params.props;
 
     return (
-        <View style={styles.container}>
-            <Text>Detail view {id}</Text>
-            <Text>{description}</Text>
+        <View style={{ backgroundColor: "#fff" }}>
+            <ScrollView contentContainerStyle={styles.container}>        
+                <Top item={route.params.props} minimized={true}/>
+
+            </ScrollView>
         </View>
     );
 }
@@ -17,9 +20,10 @@ export default Detail;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        display: "flex",
+        flexDirection: "column",
         backgroundColor: "#fff",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "flex-start",
     },
 });

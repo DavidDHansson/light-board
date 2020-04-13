@@ -25,7 +25,7 @@ function Main() {
 
     const [tabBarOptions] = useState({
         activeTintColor: main,
-        inactiveTintColor: mainFade,
+        inactiveTintColor: mainFade, 
     });
 
     return (
@@ -35,11 +35,11 @@ function Main() {
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
 
-                        if (route.name === "Home") {
+                        if (route.name === "Hjem") {
                             iconName = focused
                                 ? "ios-information-circle"
                                 : "ios-information-circle-outline";
-                        } else if (route.name === "Settings") {
+                        } else if (route.name === "Indstillinger") {
                             iconName = focused ? "ios-list-box" : "ios-list";
                         }
 
@@ -48,8 +48,8 @@ function Main() {
                 })}
                 tabBarOptions={tabBarOptions}
             >
-                <Tab.Screen name="Home" component={HomeStack} />
-                <Tab.Screen name="Settings" component={SettingsStack} />
+                <Tab.Screen name="Hjem" component={HomeStack} />
+                <Tab.Screen name="Indstillinger" component={SettingsStack} />
             </Tab.Navigator>
         </NavigationContainer>
     );
