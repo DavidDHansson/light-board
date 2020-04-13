@@ -4,7 +4,9 @@ export function getColor() {
         main: "#5603ad",
         mainFade: "#8367c7",
         second: "#b3e9c7",
-        secondFade: "#c2f8cb"
+        secondFade: "#c2f8cb",
+        gray: "rgb(160, 160, 160)",
+        lightGray: "rgb(238, 241, 247)"
     }
 }
 
@@ -29,4 +31,9 @@ export function getDayName() {
     const days = ["Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"]
 
     return days[current]
+}
+
+export function getHomeContent() {
+    return fetch("http://4hansson.dk/api/tek/home.json")
+        .then(res => res.json())
 }

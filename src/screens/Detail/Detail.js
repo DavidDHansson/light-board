@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
 
 import Top from "./../Home/HomeElementBig";
+import Item from "./DetailItem";
 
 function Detail({ route, navigation }) {
     const { id, description, title, content } = route.params.props;
@@ -10,7 +11,7 @@ function Detail({ route, navigation }) {
         <View style={{ backgroundColor: "#fff" }}>
             <ScrollView contentContainerStyle={styles.container}>        
                 <Top item={route.params.props} minimized={true}/>
-
+                {content.map((item, index) => <Item item={item} spacer={content.length !== index + 1} key={index}/> )}
             </ScrollView>
         </View>
     );
@@ -25,5 +26,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "flex-start",
+        height: Dimensions.get("window").height
     },
 });
