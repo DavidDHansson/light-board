@@ -5,8 +5,8 @@ export function getColor() {
         mainFade: "#8367c7",
         second: "#b3e9c7",
         secondFade: "#c2f8cb",
-        gray: "rgb(160, 160, 160)",
-        lightGray: "rgb(238, 241, 247)"
+        gray: "#a0a0a0",
+        lightGray: "#eef1f7"
     }
 }
 

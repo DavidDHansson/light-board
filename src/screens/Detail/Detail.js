@@ -11,7 +11,7 @@ function Detail({ route, navigation }) {
         <View style={{ backgroundColor: "#fff" }}>
             <ScrollView contentContainerStyle={styles.container}>        
                 <Top item={route.params.props} minimized={true}/>
-                {content.map((item, index) => <Item item={item} spacer={content.length !== index + 1} key={index}/> )}
+                {content.map((item, index) => <Item item={item} key={index}/> )}
             </ScrollView>
         </View>
     );

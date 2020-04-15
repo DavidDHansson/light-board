@@ -5,13 +5,13 @@ import { getColor } from "./../../components/constans";
 
 function DetailItem(props) {
     const { title, description, url } = props.item;
-
+    
     function eventHandler() {
         fetch(url);
     }
 
     return (
-        <View style={[styles.container, props.spacer && (styles.spacer)]}>
+        <View style={styles.container}>
             <View style={styles.wrapper}>
                 <View style={styles.content}>
                     <Text style={styles.title}>{title}</Text>
@@ -35,26 +35,27 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "flex-start",
         marginVertical: 10,
-        width: Dimensions.get("window").width - 40
-    },
-    spacer: {
-        borderBottomWidth: 1,
-        borderBottomColor: getColor().gray, 
+        width: Dimensions.get("window").width - 40,
+        borderRadius: 10
     },
     wrapper: {
         display: "flex",
-        flexDirection: "row"
+        flexDirection: "row",
+        width: Dimensions.get("window").width - 40,
+        justifyContent: "center",
+        paddingVertical: 6
     },
     content: {
         display: "flex",
         flexDirection: "column",
-        width: (Dimensions.get("window").width - 40) * 0.75,
+        width: (Dimensions.get("window").width - 60) * 0.75,
     },
     buttonView: {
-        width: (Dimensions.get("window").width - 40) / 4,
+        width: (Dimensions.get("window").width - 60) / 4,
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
+        justifyContent: "flex-start",
+        alignItems: "center",
+        paddingTop: 6
     },
     button: {
         paddingVertical: 6,
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
         backgroundColor: getColor().lightGray,
     },
     buttonText: {
-        color: "rgb(54, 116, 254)",
+        color: "#3674fe",
         fontWeight: "600"
     },
     title: {

@@ -8,7 +8,8 @@ function HomeView({ navigation }) {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        getHomeContent().then(data => setData(data))
+        // getHomeContent().then(data => setData(data))
+        getHomeContent().then(data => { setData(data); console.log(data)})
     }, []);
 
     return (
@@ -16,7 +17,7 @@ function HomeView({ navigation }) {
             <ScrollView contentContainerStyle={styles.container}>
                 <TopTitle loading={data.length === 0} />
                 <View>
-                    {data.map(item => <Element navigate={navigation.navigate} item={item} minimized={false} key={item.id} />)}
+                    {data.map(item => <Element navigate={navigation.navigate} data={data} item={item} minimized={false} key={item.id} />)}
                 </View>
             </ScrollView>
         </SafeAreaView>

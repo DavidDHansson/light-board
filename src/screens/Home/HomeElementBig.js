@@ -4,18 +4,25 @@ import { View, Text, Image, Dimensions, StyleSheet, TouchableOpacity } from "rea
 import { getAsset } from "./../../components/constans";
 
 function HomeElementsBig(props) {
-    const navigate = props.navigate
-    const minimized = props.minimized;
+    const { navigate, minimized } = props;
 
     if (!minimized) {
         return (
-            <TouchableOpacity onPress={() => navigate("Detail", { props: props.item })}>
-                <Content item={props.item} minimized={false}/>
-            </TouchableOpacity>
+            <View style={{ display: "flex", flexDirection: "column" }}>
+                <View style={{ paddingTop: 20 }}></View>
+                <TouchableOpacity onPress={() => navigate("Detail", { props: props.item, title: props.item.title })}>
+                    <Content item={props.item} minimized={false} />
+                </TouchableOpacity>
+                <View style={{ paddingVertical: 20 }}></View>
+            </View>
         );
     } else {
         return (
-            <Content item={props.item} minimized={true}/>
+            <View style={{ display: "flex", flexDirection: "column" }}>
+                <View style={{ paddingTop: 20 }}></View>
+                <Content item={props.item} minimized={true} />
+                <View style={{ paddingBottom: 20 }}></View>
+            </View>
         );
     }
 }
@@ -24,7 +31,7 @@ function Content(props) {
     const { width, height } = Dimensions.get("window");
     const { id, title, description, content, titleColor, descriptionColor } = props.item;
     const minimized = props.minimized;
-    const descriptionTop = ((height / 3) * (minimized ? 1 : 2) - ((height / 3) * (minimized ? 1 : 2)) / 10) - (minimized ? 30 : 10);
+    const descriptionTop = ((height / 3) * (minimized ? 1 : 2) - ((height / 3) * (minimized ? 1 : 2)) / 10) - (minimized ? 30 : 10) - 10;
 
     return (
         <View style={styles.container} key={id}>
@@ -49,7 +56,6 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginVertical: 40
     },
     center: {
         position: "absolute",
@@ -69,7 +75,9 @@ const styles = StyleSheet.create({
         right: 20,
         bottom: 20,
         height: 100,
-        width: Dimensions.get("window").width - 40
+        width: Dimensions.get("window").width - 40 - 20,
+        fontSize: 18,
+
     }
 });
 

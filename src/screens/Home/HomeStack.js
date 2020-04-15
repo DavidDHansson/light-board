@@ -15,7 +15,7 @@ function HomeStack() {
 
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeView} options={{ headerShown: false }}/>
+            <Stack.Screen name="Hjem" component={HomeView} options={{ headerShown: false }}/>
             <Stack.Screen name="Detail" component={Detail} options={({ route }) => ({
                 title: route.params.title,
                 headerShown: true,
